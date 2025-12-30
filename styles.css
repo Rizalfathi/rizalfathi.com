@@ -560,6 +560,199 @@
             font-size: 0.8rem;
         }
 
+        /* Blog/Novel Section */
+        .blog-title {
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .blog-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent3));
+            border-radius: 2px;
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .blog-choice {
+            display: flex;
+            justify-content: center;
+        }
+
+        .blog-card {
+            background: var(--secondary);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(88, 166, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+            pointer-events: none;
+        }
+
+        .blog-choice-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent3);
+            box-shadow: 0 20px 45px rgba(126, 231, 135, 0.25);
+        }
+
+        .blog-choice-card:hover::before {
+            left: 100%;
+        }
+
+        /* Blog Card (First) - Blue Highlight */
+        .blog-container .blog-choice:nth-child(1) .blog-choice-card {
+            border: 2px solid transparent;
+            background: var(--secondary);
+        }
+
+        .blog-container .blog-choice:nth-child(1) .blog-choice-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(88, 166, 255, 0.4), 0 20px 45px rgba(88, 166, 255, 0.25);
+            background: linear-gradient(135deg, var(--secondary), rgba(88, 166, 255, 0.1));
+        }
+
+        .blog-container .blog-choice:nth-child(1) .blog-icon {
+            color: var(--accent);
+        }
+
+        .blog-container .blog-choice:nth-child(1) .blog-choice-card:hover .blog-icon {
+            color: var(--accent);
+            text-shadow: 0 0 20px rgba(88, 166, 255, 0.6);
+        }
+
+        .blog-container .blog-choice:nth-child(1) .blog-button {
+            background: linear-gradient(135deg, var(--accent), rgba(88, 166, 255, 0.8));
+        }
+
+        .blog-container .blog-choice:nth-child(1) .blog-button:hover {
+            box-shadow: 0 8px 25px rgba(88, 166, 255, 0.5);
+        }
+
+        /* Novel Card (Second) - Green Highlight */
+        .blog-container .blog-choice:nth-child(2) .blog-choice-card {
+            border: 2px solid transparent;
+            background: var(--secondary);
+        }
+
+        .blog-container .blog-choice:nth-child(2) .blog-choice-card:hover {
+            border-color: var(--accent3);
+            box-shadow: 0 0 30px rgba(126, 231, 135, 0.4), 0 20px 45px rgba(126, 231, 135, 0.25);
+            background: linear-gradient(135deg, var(--secondary), rgba(126, 231, 135, 0.1));
+        }
+
+        .blog-container .blog-choice:nth-child(2) .blog-icon {
+            color: var(--accent3);
+        }
+
+        .blog-container .blog-choice:nth-child(2) .blog-choice-card:hover .blog-icon {
+            color: var(--accent3);
+            text-shadow: 0 0 20px rgba(126, 231, 135, 0.6);
+        }
+
+        .blog-container .blog-choice:nth-child(2) .blog-button {
+            background: linear-gradient(135deg, var(--accent3), rgba(126, 231, 135, 0.8));
+        }
+
+        .blog-container .blog-choice:nth-child(2) .blog-button:hover {
+            box-shadow: 0 8px 25px rgba(126, 231, 135, 0.5);
+        }
+
+        .blog-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .blog-choice-card:hover .blog-icon {
+            transform: scale(1.2) rotate(5deg);
+            color: var(--accent3);
+        }
+
+        .blog-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .blog-card p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .blog-button {
+            display: inline-block;
+            padding: 0.75rem 1.8rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent3));
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.4s ease;
+        }
+
+        .blog-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(126, 231, 135, 0.4);
+        }
+
+        .blog-button:hover::before {
+            left: 100%;
+        }
+
         /* Interests */
         .interests-container {
             display: grid;
@@ -850,10 +1043,18 @@
             .project-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 576px) {
             .section-title {
+                font-size: 2rem;
+            }
+            
+            .blog-title {
                 font-size: 2rem;
             }
             
@@ -875,5 +1076,231 @@
             
             .logo-ui {
                 font-size: 1.1em;
+            }
+        }
+
+        /* Blog Page */
+        .blog-header, .novels-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+        }
+
+        .blog-page-title, .novels-page-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .blog-page-subtitle, .novels-page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .article-card {
+            background: var(--secondary);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(88, 166, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent3));
+            transition: left 0.6s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px rgba(88, 166, 255, 0.25);
+        }
+
+        .article-card:hover::before {
+            left: 100%;
+        }
+
+        .article-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(88, 166, 255, 0.1);
+        }
+
+        .article-category {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .article-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .article-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            color: var(--text);
+        }
+
+        .article-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.4rem 0.9rem;
+            background: rgba(126, 231, 135, 0.1);
+            color: var(--accent3);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            width: fit-content;
+        }
+
+        .read-more:hover {
+            color: var(--accent3);
+            gap: 1rem;
+        }
+
+        .read-more i {
+            transition: var(--transition);
+        }
+
+        /* Novels Grid */
+        .novels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .novel-card {
+            background: var(--secondary);
+            border-radius: 15px;
+            border: 2px solid rgba(88, 166, 255, 0.2);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
+        }
+
+        .novel-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px rgba(88, 166, 255, 0.25);
+            transform: translateY(-10px);
+        }
+
+        .novel-cover {
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(88, 166, 255, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            font-size: 4rem;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .novel-card:hover .novel-cover {
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.25), rgba(88, 166, 255, 0.15));
+            color: var(--accent);
+        }
+
+        .novel-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .novel-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .novel-status {
+            color: var(--text-light);
+            margin-bottom: auto;
+            font-size: 0.95rem;
+        }
+
+        .novel-card .read-more {
+            align-self: flex-start;
+            margin-top: 1rem;
+        }
+
+        /* Responsive - Blog Page */
+        @media (max-width: 768px) {
+            .blog-page-title, .novels-page-title {
+                font-size: 2rem;
+            }
+
+            .blog-page-subtitle, .novels-page-subtitle {
+                font-size: 1rem;
+            }
+
+            .articles-grid, .novels-grid {
+                grid-template-columns: 1fr;
             }
         }
