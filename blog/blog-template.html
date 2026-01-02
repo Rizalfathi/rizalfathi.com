@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafting Beautiful UIs with CSS | Rizal Fathi</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="../index.html" class="logo">Rizal<span>Fathi</span></a>
+        <div class="nav-links">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../index.html#interests">Interests</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <div class="article-header-full">
+            <div class="article-meta">
+                <span class="article-category">Development</span>
+                <span class="article-date">December 30, 2025</span>
+                <span class="read-time">5 min read</span>
+            </div>
+            <h1 class="article-title">Crafting Beautiful UIs with CSS</h1>
+            <p class="article-excerpt">Explore modern CSS techniques and best practices for creating stunning, responsive user interfaces that delight users.</p>
+            <div class="article-tags-full">
+                <span class="tag">CSS</span>
+                <span class="tag">UI Design</span>
+                <span class="tag">Web Dev</span>
+                <span class="tag">Tutorial</span>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <h2>Introduction</h2>
+            <p>CSS has evolved significantly over the years, offering developers powerful tools to create visually stunning and responsive interfaces. In this article, we'll explore modern CSS techniques that can elevate your UI design game.</p>
+
+            <h2>The Power of CSS Grid</h2>
+            <p>CSS Grid is one of the most powerful layout systems available to web developers. Unlike Flexbox, which is primarily one-dimensional, Grid allows you to create complex two-dimensional layouts with ease.</p>
+            <p>Here's a simple example of a grid layout:</p>
+            <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}</code></pre>
+
+            <h2>CSS Variables for Consistency</h2>
+            <p>CSS Variables, also known as CSS Custom Properties, allow you to define reusable values that can be used throughout your stylesheet. This promotes consistency and makes maintenance much easier.</p>
+            <p>Here's how to use them effectively:</p>
+            <pre><code>:root {
+    --primary-color: #0d1117;
+    --accent-color: #58a6ff;
+    --spacing: 1rem;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}</code></pre>
+
+            <h2>Responsive Design Best Practices</h2>
+            <p>Creating responsive interfaces isn't just about media queries. It's about designing with a mobile-first approach and ensuring your CSS scales gracefully across all devices.</p>
+            <p>Key principles include:</p>
+            <ul>
+                <li>Using relative units (rem, em, %) instead of absolute units</li>
+                <li>Testing on various devices and screen sizes</li>
+                <li>Prioritizing performance and accessibility</li>
+                <li>Using modern CSS features like Flexbox and Grid</li>
+            </ul>
+
+            <h2>Animation and Transitions</h2>
+            <p>Smooth animations and transitions can greatly enhance user experience. However, it's important to use them thoughtfully and avoid excessive motion.</p>
+            <pre><code>.button {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(88, 166, 255, 0.4);
+}</code></pre>
+
+            <h2>Conclusion</h2>
+            <p>Modern CSS provides an incredible toolkit for creating beautiful, responsive, and performant user interfaces. By mastering these techniques, you'll be able to build UIs that not only look great but also provide excellent user experiences.</p>
+
+            <div class="article-footer">
+                <a href="blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Articles Section -->
+    <section class="related-articles">
+        <h2>Related Articles</h2>
+        <div class="articles-grid">
+            <article class="article-card">
+                <div class="article-header">
+                    <span class="article-category">Design</span>
+                    <span class="article-date">Coming Soon</span>
+                </div>
+                <h3>The Art of Responsive Design</h3>
+                <p>Learn how to design websites that look great and function perfectly across all devices and screen sizes.</p>
+                <div class="article-tags">
+                    <span class="tag">Responsive</span>
+                    <span class="tag">Mobile</span>
+                    <span class="tag">Design</span>
+                </div>
+                <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+            </article>
+
+            <article class="article-card">
+                <div class="article-header">
+                    <span class="article-category">Development</span>
+                    <span class="article-date">Coming Soon</span>
+                </div>
+                <h3>JavaScript Performance Tips</h3>
+                <p>Master optimization techniques to write faster, more efficient JavaScript code that improves user experience.</p>
+                <div class="article-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Performance</span>
+                    <span class="tag">Optimization</span>
+                </div>
+                <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">Rizal<span>Fathi</span></div>
+                <p class="footer-text">Happiness is born through a little talking -pi 🦑.</p>
+                <div class="social-links">
+                    <a href="https://github.com/Rizalfathi" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://discordapp.com/users/757883930497253476" class="social-link"><i class="fab fa-discord"></i></a>
+                    <a href="https://www.instagram.com/rzalfathi/" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#interests">Interests</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../novel.html">Novel</a></li>
+                    <li><a href="#">Design Process</a></li>
+                    <li><a href="#">Development Tools</a></li>
+                    <li><a href="#">Inspiration</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Rizal Fathi. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
