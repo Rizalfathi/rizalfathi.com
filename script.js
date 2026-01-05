@@ -48,11 +48,30 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animated');
-                    }lo
+                    }
                 });
             }, { threshold: 0.1 });
             
             document.querySelectorAll('.project-card, .interest-card, .about-image').forEach(el => {
                 observer.observe(el);
             });
+
+            // Chapter navigation toggle
+            const chapterNavToggle = document.querySelector('.chapter-nav-toggle');
+            const chapterNav = document.querySelector('.chapter-navigation');
+            
+            if (chapterNavToggle && chapterNav) {
+                chapterNavToggle.addEventListener('click', () => {
+                    chapterNav.classList.toggle('collapsed');
+                    // Save preference to localStorage
+                    const isCollapsed = chapterNav.classList.contains('collapsed');
+                    localStorage.setItem('chapterNavCollapsed', isCollapsed);
+                });
+
+                // Restore previous state from localStorage
+                const wasCollapsed = localStorage.getItem('chapterNavCollapsed') === 'true';
+                if (wasCollapsed) {
+                    chapterNav.classList.add('collapsed');
+                }
+            }
         });

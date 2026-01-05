@@ -124,6 +124,259 @@
             width: 100%;
         }
 
+        /* New Navigation Structure (for chapters 3+) */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--text);
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--accent);
+        }
+
+        /* Chapter List Styles */
+        .chapter-navigation {
+            position: fixed;
+            right: 2rem;
+            top: 150px;
+            width: 300px;
+            max-height: 70vh;
+            overflow-y: auto;
+            background: rgba(22, 27, 34, 0.8);
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: max-width 0.3s ease, padding 0.3s ease;
+        }
+
+        .chapter-navigation.collapsed {
+            max-width: 50px;
+            padding: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chapter-nav-toggle {
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-nav-toggle:hover {
+            color: var(--accent3);
+            transform: scale(1.1);
+        }
+
+        .chapter-navigation.collapsed .chapter-nav-toggle {
+            margin-bottom: 0;
+        }
+
+        .chapter-nav-content {
+            width: 100%;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+        }
+
+        .chapter-navigation.collapsed .chapter-nav-content {
+            display: none;
+        }
+
+        .chapter-navigation h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            text-align: center;
+        }
+
+        .chapter-navigation h2 {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            text-align: center;
+            width: 100%;
+        }
+
+        .chapter-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .chapter-list li {
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+
+        .chapter-list a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: block;
+            padding: 0.5rem;
+            border-left: 3px solid transparent;
+            text-align: center;
+        }
+
+        .chapter-list a:hover {
+            color: var(--accent);
+            border-left-color: var(--accent);
+            padding-left: 0.8rem;
+        }
+
+        .chapter-list a.current {
+            color: var(--accent);
+            border-left-color: var(--accent);
+            padding-left: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Chapter Info Badges */
+        .chapter-info-badge {
+            display: inline-block;
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(88, 166, 255, 0.3);
+        }
+
+        .chapter-date-badge {
+            display: inline-block;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .chapter-divider {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            margin: 2rem auto;
+            border: none;
+        }
+
+        .chapter-navigation-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(88, 166, 255, 0.1);
+        }
+
+        .nav-prev, .nav-next {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            border-radius: 6px;
+        }
+
+        .nav-prev:hover, .nav-next:hover {
+            background: rgba(88, 166, 255, 0.1);
+            border-color: var(--accent);
+        }
+
+        .nav-prev {
+            margin-right: auto;
+        }
+
+        .nav-next {
+            margin-left: auto;
+        }
+
+        .nav-middle {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-middle:hover {
+            background: rgba(88, 166, 255, 0.1);
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -1520,11 +1773,13 @@
         }
 
         .chapters-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             gap: 1rem;
-            max-width: 800px;
+            max-width: 300px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .chapter-item {
@@ -1534,6 +1789,12 @@
             border-radius: 10px;
             text-align: center;
             transition: var(--transition);
+            width: 100%;
+            max-width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .chapter-item.current {
@@ -1588,8 +1849,263 @@
                 gap: 1rem;
                 font-size: 0.85rem;
             }
+        }
+
+        /* Novel Landing Page */
+        .novel-landing {
+            padding: 8rem 5% 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent3);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .back-link-top:hover {
+            gap: 1rem;
+            color: var(--accent);
+        }
+
+        .novel-landing-container {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .novel-landing-header {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+            padding: 2rem;
+            background: var(--secondary);
+            border-radius: 20px;
+            border: 1px solid rgba(88, 166, 255, 0.1);
+        }
+
+        .novel-cover-large {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.2), rgba(88, 166, 255, 0.1));
+            border-radius: 15px;
+            aspect-ratio: 1;
+            font-size: 5rem;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .novel-cover-large:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(88, 166, 255, 0.3);
+        }
+
+        .novel-landing-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .novel-landing-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .novel-meta-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .novel-author {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .novel-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(88, 166, 255, 0.1);
+            border-bottom: 1px solid rgba(88, 166, 255, 0.1);
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Novel Sections */
+        .novel-section {
+            padding: 2rem;
+            background: var(--secondary);
+            border-radius: 15px;
+            border: 1px solid rgba(88, 166, 255, 0.1);
+        }
+
+        .section-heading {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .novel-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .novel-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .author-note-content {
+            border-left: 4px solid var(--accent3);
+            padding-left: 1.5rem;
+        }
+
+        .author-sign {
+            margin-top: 1.5rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Chapters Grid */
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .chapter-link {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .chapter-link.disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .chapter-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            padding: 1.5rem;
+            background: rgba(88, 166, 255, 0.05);
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .chapter-link:not(.disabled) .chapter-preview {
+            cursor: pointer;
+        }
+
+        .chapter-link:not(.disabled) .chapter-preview:hover {
+            background: rgba(88, 166, 255, 0.15);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
+        }
+
+        .chapter-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .chapter-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .chapter-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Responsive - Novel Landing */
+        @media (max-width: 992px) {
+            .novel-landing-header {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .novel-cover-large {
+                width: 200px;
+                margin: 0 auto;
+            }
+
+            .novel-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .novel-landing {
+                padding: 6rem 5% 2rem;
+            }
+
+            .novel-landing-title {
+                font-size: 2rem;
+            }
+
+            .novel-landing-header {
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+
+            .novel-section {
+                padding: 1.5rem;
+            }
+
+            .section-heading {
+                font-size: 1.5rem;
+            }
+
+            .chapters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            }
 
             .chapters-list {
                 grid-template-columns: 1fr;
             }
-        }
