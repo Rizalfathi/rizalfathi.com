@@ -1671,7 +1671,7 @@
             color: var(--accent);
         }
 
-        .article-body p, .novel-body p {
+        .article-body p, .novel-body p, pre {
             margin-bottom: 1.5rem;
         }
 
@@ -1700,6 +1700,7 @@
         }
 
         .chapter {
+            white-space: pre-wrap;
             margin-bottom: 3rem;
         }
 
